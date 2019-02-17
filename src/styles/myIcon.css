@@ -1,0 +1,33 @@
+@font-face {font-family: "v-hot";
+    src: url('//at.alicdn.com/t/font_1047668_0geyvc9l7m9.eot?t=1550406958270'); /* IE9 */
+    src: url('//at.alicdn.com/t/font_1047668_0geyvc9l7m9.eot?t=1550406958270#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAATkAAsAAAAACbAAAASWAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqGdIVRATYCJAMUCwwABCAFhEkHRxs4CCOS7k2a7C8ObGNpQxcYGePCMQzdHuGelC6voEJlgB3zq0G5ocH7PpSch+/vzXPfu/933N2kWywdqI4vSDS0FLFQB+AOmJ/es95Mit2ZXVdL80Ald24PSlOcwS8rARDmm3M9sFERZihnnzz6QtJ2lF2bp/85ZryyNejeXwNAZHFE42gCez6dRdVdEzbeO0A699MQr14HMZMerMVoP4HRoWNxl19aC73kDgvEplePTtBX9LKHFHpVC+bmVswFqb484UvAc/L28QeXYUHRVO7Y9UNeV7j6jCqGFdnWyAjcelbIi6g4RhKP0L5RM9+xajQ7pyuMekVZq5U8qEoUC/ENKUfvHx5VCoVoufKZY678yScK2FQ+5XykCCKZKarIr+B1zWXEglgR9+Bi921QDKr24gjjjJr1zUArhrBcgwSM4RDSq7rrCdEquioUSraYYuN6SnUbESMIasrzUL2nSzPl1QKq1yoWAv5YqCB6vYoxbfAnq9ZpMMs0nCq8jPToNkY5Ut22EITAYAGN4YHL1aOCO3fq795tkBhu3aq9fbsuU8EbKdIJajXiNuKV/Oq1ZjS6xO36/p07Y2z0ek6gtjqeXVhro9XL0G/usmYDt1G3nl1Xv+sae113k7vRqfG3tCxcp+jYbMvziogN/jbOpiP+RLuQ5SnlVyubjIf9rAWB06ustGtU9V3WHnVpMGdwqxDgWXiwfiRl6PRHm/JTQ3rt7nNa/kFzSiNqEPmwrXabSJFcVJ9Wi3I41em5qbul2Z10W2tziv5fNmvZf4pk7wfO7Phfhqz+b5u57T09ZbO269xEvq+3GeQvv2iXfwx5D47ADL73FOGMgYy75gHE7NfMO3l+dnBpUE8DbpFMPrhhKqa0QxuYyaillwE84Zzgkxc0C6RWH62B/AdJXVZ9O74FbUZfj7uslAa7Dn5mFdl5C+5jmNoPEyfS4D6S3mAodjBAzI5Ow+ea7Q9YDCdmu4PybyQ0pD+hiGJgr3WkMcCjOEzvGFNenzy9Sc4pz3lS2whnr23vA8IcythR8t+Ka3XJLQuOZZNLikske5m7c+nlkpXH3s295Hhp7jtavpTmvAnYwZe470uFRgAAEHX1FzMQAIBZY50UeFpXMO7/u58B7fZO/zrYpn7rqQQAAO7NGR6e5IgTsi/DAvx5FDBa8C8rkfQBEMXsq4hcnTTZeoDyC+GcBJCqB8tvRAl/KLXI3Q7wZB2lcnQiACKlLACTcwaGlBdCgvEHKSpEKlOU8QRECKQsphyhOzBQWgJAMIxigBArAbOxGRjEQYQEcxqkVHAVZIjXQNTDhzUpf5RHcvoRlaAF/YdgeCR/hhw+mWe5oXv3KhI/7PXCmAKPUOVlNXjFEeO8CenjahECijzAZYHDsO8ZpsgtGsm9yNQUBaFXyg0PswMcIypBC/oPwfBI0eZygE/mWW7o3r0SynhZZn2hZU9hZnOo8rIPcZWP/VX3lCbL6mrOKASUyANcTiFFIbZnmHCvFo3kfoZnagqvFo2V5zejHN7RBhjB3aBBGDFIgqRIBquePOD20bWn0OM6cZS0MirSzWYAAA==') format('woff2'),
+    url('//at.alicdn.com/t/font_1047668_0geyvc9l7m9.woff?t=1550406958270') format('woff'),
+    url('//at.alicdn.com/t/font_1047668_0geyvc9l7m9.ttf?t=1550406958270') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('//at.alicdn.com/t/font_1047668_0geyvc9l7m9.svg?t=1550406958270#v-hot') format('svg'); /* iOS 4.1- */
+  }
+  
+  .v-hot {
+    font-family: "v-hot" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-home:before {
+    content: "\e629";
+  }
+  
+  .icon-profile:before {
+    content: "\e651";
+  }
+  
+  .icon-sorts:before {
+    content: "\e601";
+  }
+  
+  .icon-cart:before {
+    content: "\e607";
+  }
+  
