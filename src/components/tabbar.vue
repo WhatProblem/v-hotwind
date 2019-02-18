@@ -2,34 +2,26 @@
   <div class="tabbar ignore">
     <div class="home">
       <router-link tag="div" class="navbar" to="/home">
-        <div>
-          <i class="v-hot icon-home"></i>
-          <div class="navTitle">首页</div>
-        </div>
+        <i class="v-hot icon-home"></i>
+        <div class="navTitle">首页</div>
       </router-link>
     </div>
     <div class="sorts">
       <router-link tag="div" class="navbar" to="/sorts">
-        <div>
-          <i class="v-hot icon-sorts"></i>
-          <div class="navTitle">分类</div>
-        </div>
+        <i class="v-hot icon-sorts"></i>
+        <div class="navTitle">分类</div>
       </router-link>
     </div>
     <div class="cart">
       <router-link tag="div" class="navbar" to="/cart">
-        <div>
-          <i class="v-hot icon-cart"></i>
-          <div class="navTitle">购物车</div>
-        </div>
+        <i class="v-hot icon-cart"></i>
+        <div class="navTitle">购物车</div>
       </router-link>
     </div>
     <div class="profile">
       <router-link tag="div" class="navbar" to="/profile">
-        <div>
-          <i class="v-hot icon-profile"></i>
-          <div class="navTitle">个人中心</div>
-        </div>
+        <i class="v-hot icon-profile"></i>
+        <div class="navTitle">个人中心</div>
       </router-link>
     </div>
   </div>
@@ -54,6 +46,7 @@ export default {
 .ignore {
   border-top: 1px solid #e4e5e9;
 }
+
 .home,
 .sorts,
 .cart,
@@ -63,17 +56,22 @@ export default {
   font-size: 28px;
   text-align: center;
   color: #333;
+  :active {
+    background: #fff;
+  }
 }
+
 i {
   display: block;
   width: 100%;
-  height: 50%;
-  font-size: 28px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 36px;
 }
 .navTitle {
   width: 100%;
-  height: 50%;
-  line-height: 30px;
+  height: 60px;
+  line-height: 60px;
   font-size: 28px;
 }
 </style>

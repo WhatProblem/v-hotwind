@@ -5,6 +5,7 @@ import Home from '@/view/home/home'
 import Sorts from '@/view/sorts/sorts'
 import Cart from '@/view/cart/cart'
 import Profile from '@/view/profile/profile'
+import GoodList from '@/view/goodList/goodList'
 
 Vue.use(Router)
 
@@ -18,7 +19,12 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: Home,
+    },
+    {
+      path: '/goodList',
+      name: 'GoodList',
+      component: GoodList
     },
     {
       path: '/sorts',

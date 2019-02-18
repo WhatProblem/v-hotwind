@@ -1,6 +1,7 @@
 <template>
     <div class="home">
         <div class="homeTitle">home部分</div>
+        <router-link to="/goodList">跳转到goodlist</router-link>
     </div>
 </template>
 <script>
