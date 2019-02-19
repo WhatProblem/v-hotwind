@@ -1,18 +1,44 @@
 <template>
   <div id="app">
     <router-view/>
-    <Tabbar class="tabbar"></Tabbar>
+    <Tabbar class="tabbar" v-if="tabHide"></Tabbar>
   </div>
 </template>
 
 <script>
-import Tabbar from '@/components/tabbar'
+import Tabbar from "@/components/tabbar";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Tabbar
+  },
+  data() {
+    return {
+      tabHide: true
+    };
+  },
+  computed: {},
+  created() {
+    this.tabStatus();
+  },
+  mounted() {},
+  methods: {
+    tabStatus() {
+      let curRoute = this.$route.fullPath;
+      let routeArr = ["/home", "/sorts", "/cart", "/profile"];
+      if (routeArr.includes(curRoute)) {
+        this.tabHide = true;
+      } else {
+        this.tabHide = false;
+      }
+    }
+  },
+  watch: {
+    '$route'(to, from) {
+      this.tabStatus();
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
