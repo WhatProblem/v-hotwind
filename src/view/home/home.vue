@@ -1,12 +1,17 @@
 <template>
     <div class="home">
+        <Banner></Banner>
         <div class="homeTitle">home部分</div>
         <router-link to="/goodList">跳转到goodlist</router-link>
     </div>
 </template>
 <script>
+import Banner from '@/components/banner'
 export default {
     name: 'Home',
+    components: {
+        Banner
+    },
     data () {
         return {
             
