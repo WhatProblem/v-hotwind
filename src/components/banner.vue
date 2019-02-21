@@ -3,22 +3,22 @@
     <!-- swiper -->
     <swiper :options="swiperOption">
       <swiper-slide class="slideItem">
-        <div class="posterImg" @click="testClick">
+        <div class="posterImg">
           <img src="../assets/img/banner/banner_1.jpg" alt>
         </div>
       </swiper-slide>
       <swiper-slide class="slideItem">
-        <div class="posterImg" @click="testClick">
+        <div class="posterImg">
           <img src="../assets/img/banner/banner_2.jpg" alt>
         </div>
       </swiper-slide>
       <swiper-slide class="slideItem">
-        <div class="posterImg" @click="testClick">
+        <div class="posterImg">
           <img src="../assets/img/banner/banner_3.jpg" alt>
         </div>
       </swiper-slide>
       <swiper-slide class="slideItem">
-        <div class="posterImg" @click="testClick">
+        <div class="posterImg">
           <img src="../assets/img/banner/banner_4.jpg" alt>
         </div>
       </swiper-slide>
@@ -42,8 +42,8 @@ export default {
         },
         loop: true,
         on: {
-          clcik: function(e) {
-              console.log(324123)
+          click: function(e) {
+            console.log(this.activeIndex)
           }
         }
       }

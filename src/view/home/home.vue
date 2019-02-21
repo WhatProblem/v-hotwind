@@ -1,16 +1,23 @@
 <template>
     <div class="home">
         <Banner></Banner>
+        <Theme></Theme>
+        <SortArea></SortArea>
+        <SortArea></SortArea>
         <div class="homeTitle">home部分</div>
         <router-link to="/goodList">跳转到goodlist</router-link>
     </div>
 </template>
 <script>
 import Banner from '@/components/banner'
+import Theme from '@/components/theme'
+import SortArea from '@/components/sortArea'
 export default {
     name: 'Home',
     components: {
-        Banner
+        Banner,
+        Theme,
+        SortArea
     },
     data () {
         return {
