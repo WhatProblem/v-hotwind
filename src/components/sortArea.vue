@@ -1,56 +1,14 @@
 <template>
   <div class="sortArea">
     <div class="sortTitile ignore">
-      Girls-热门分类
+      {{propData.title}}
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="sortList">
-      <div class="sortItem">
+      <div class="sortItem" v-for="(item,index) in propData.sortList" :key="index">
         <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_1.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_2.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_3.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_4.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_5.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_6.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_7.jpg" alt>
-          <div class="itemTitle">分类名称</div>
-        </div>
-      </div>
-      <div class="sortItem">
-        <div class="sortImg">
-          <img src="../assets/img/sortTitle/girl_sort_8.jpg" alt>
-          <div class="itemTitle">分类名称</div>
+          <img class="poster" :src="item.picUrl" alt>
+          <div class="itemTitle">{{item.sortName}}</div>
         </div>
       </div>
     </div>
@@ -59,6 +17,7 @@
 <script>
 export default {
   name: "SortArea",
+  props: ["propData"],
   data() {
     return {};
   }
@@ -109,17 +68,21 @@ export default {
       height: 160px;
       text-align: center;
       float: left;
-      img {
+      .sortImg {
+        width: 100%;
+        height: 100%;
+        img {
           width: 100px;
           height: 100px;
           margin: auto;
-      }
-      .itemTitle {
+        }
+        .itemTitle {
           width: 100%;
           height: 30px;
           line-height: 30px;
           text-align: center;
           font-size: 24px;
+        }
       }
     }
   }
