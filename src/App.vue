@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{showtab: tabHide}">
     <router-view/>
     <Tabbar class="tabbar" v-if="tabHide"></Tabbar>
   </div>
@@ -34,7 +34,7 @@ export default {
     }
   },
   watch: {
-    '$route'(to, from) {
+    $route(to, from) {
       this.tabStatus();
     }
   }
@@ -49,6 +49,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 } */
+.showtab {
+  padding-bottom: 110px;
+}
 .tabbar {
   width: 100%;
   height: 110px;
