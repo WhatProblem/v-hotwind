@@ -9,8 +9,9 @@
     <HotSale></HotSale>
     <Welfare></Welfare>
     <Fashion></Fashion>
-    <div class="homeTitle">home部分</div>
-    <router-link to="/goodList">跳转到goodlist</router-link>
+    <Combine></Combine>
+    <Girl></Girl>
+    <Footer></Footer>
   </div>
 </template>
 <script>
@@ -22,6 +23,9 @@ import ShopSale from "@/components/shopSale";
 import HotSale from "@/components/hotSale";
 import Welfare from "@/components/welfare";
 import Fashion from "@/components/fashion";
+import Combine from "@/components/combine";
+import Girl from "@/components/girl";
+import Footer from "@/components/footer";
 // const DiscountInfo = () => ({
 // // 需要加载的组件 (应该是一个 `Promise` 对象)
 // component: import('@/components/discountInfo'),
@@ -50,7 +54,10 @@ export default {
     ShopSale,
     HotSale,
     Welfare,
-    Fashion
+    Fashion,
+    Combine,
+    Girl,
+    Footer
   },
   data() {
     return {
