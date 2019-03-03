@@ -1,0 +1,10 @@
+{
+    "postTest": {
+        "wsUrl": "/postTest"
+    },
+    "home": {
+        "wsUrl": "/initHome",
+        "param": "无",
+        "content": "初始化主页数据"
+    }
+}

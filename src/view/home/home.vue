@@ -61,6 +61,7 @@ export default {
   },
   data() {
     return {
+      initData: null,
       sortGirl: {
         title: "Girls-热门分类",
         sortList: [
@@ -137,7 +138,20 @@ export default {
       }
     };
   },
-  created() {}
+  created() {
+    this.init();
+  },
+  mounted() {},
+  methods: {
+    init() {
+      console.log("执行方法");
+      this.$http.get("home").then(res => {
+        console.log("数据获取");
+        console.log(res);
+        this.initData = res;
+      });
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

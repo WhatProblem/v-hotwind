@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import $http from './http/http'
 
 // vue-awesome-swiper
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -26,6 +27,7 @@ import './styles/myIcon.css'
 import './styles/common.css'
 
 Vue.config.productionTip = false
+Vue.prototype.$http = $http
 
 /* eslint-disable no-new */
 new Vue({
