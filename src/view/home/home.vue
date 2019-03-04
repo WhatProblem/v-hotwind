@@ -1,17 +1,19 @@
 <template>
-  <div class="home">
-    <Banner></Banner>
-    <Theme></Theme>
-    <SortArea :propData="sortGirl"></SortArea>
-    <SortArea :propData="sortBoy"></SortArea>
-    <DiscountInfo></DiscountInfo>
-    <ShopSale></ShopSale>
-    <HotSale></HotSale>
-    <Welfare></Welfare>
-    <Fashion></Fashion>
-    <Combine></Combine>
-    <Girl></Girl>
-    <Footer></Footer>
+  <div class="home" v-if="homeData">
+    <Banner :bannerData="homeData.banner"></Banner>
+    <Theme :themeData="homeData.theme"></Theme>
+    <SortArea :sorts="homeData.girlSort"></SortArea>
+    <SortArea :sorts="homeData.boySort"></SortArea>
+    <DiscountInfo :discount="homeData.discount"></DiscountInfo>
+    <ShopSale :shopSale="homeData.shopSale"></ShopSale>
+    <HotSale :hotSale="homeData.hotSale"></HotSale>
+    <Welfare :welfare="homeData.welfare"></Welfare>
+    <Fashion :fashion="homeData.fashion"></Fashion>
+    <Combine :combine="homeData.fashionSeason"></Combine>
+    <SpecialArea :SpecialArea="homeData.girls" :titles="'女装专区'"></SpecialArea>
+    <SpecialArea :SpecialArea="homeData.boys" :titles="'男装专区'"></SpecialArea>
+    <SpecialArea :SpecialArea="homeData.shoesBag" :titles="'鞋包专区'"></SpecialArea>
+    <Footer :footer="homeData.footer"></Footer>
   </div>
 </template>
 <script>
@@ -24,7 +26,7 @@ import HotSale from "@/components/hotSale";
 import Welfare from "@/components/welfare";
 import Fashion from "@/components/fashion";
 import Combine from "@/components/combine";
-import Girl from "@/components/girl";
+import SpecialArea from "@/components/specialArea";
 import Footer from "@/components/footer";
 // const DiscountInfo = () => ({
 // // 需要加载的组件 (应该是一个 `Promise` 对象)
@@ -56,86 +58,12 @@ export default {
     Welfare,
     Fashion,
     Combine,
-    Girl,
+    SpecialArea,
     Footer
   },
   data() {
     return {
-      initData: null,
-      sortGirl: {
-        title: "Girls-热门分类",
-        sortList: [
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_1.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_2.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_3.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_4.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_5.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_6.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_7.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_8.jpg",
-            sortName: "分类名称"
-          }
-        ]
-      },
-      sortBoy: {
-        title: "Girls-热门分类",
-        sortList: [
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_1.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_2.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_3.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_4.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_5.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_6.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_7.jpg",
-            sortName: "分类名称"
-          },
-          {
-            picUrl: "../../static/img/sortTitle/girl_sort_8.jpg",
-            sortName: "分类名称"
-          }
-        ]
-      }
+      homeData: null,
     };
   },
   created() {
@@ -144,11 +72,10 @@ export default {
   mounted() {},
   methods: {
     init() {
-      console.log("执行方法");
       this.$http.get("home").then(res => {
-        console.log("数据获取");
-        console.log(res);
-        this.initData = res;
+        if (res.data.code == 200) {
+          this.homeData = res.data.data;
+        }
       });
     }
   }

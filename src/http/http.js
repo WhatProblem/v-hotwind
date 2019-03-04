@@ -12,7 +12,7 @@ axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
     config.data = JSON.stringify(config.data);
     config.headers.Authorization = '';
-    console.log(config);
+    // console.log(config);
     return config;
 }, function (error) {
     // 对请求错误做些什么

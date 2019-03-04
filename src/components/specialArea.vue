@@ -1,16 +1,16 @@
 <template>
   <div class="girl">
     <div class="girlTtitel ignore">
-      女装专区
+      {{titles}}
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="girlDetail">
-      <div class="list" v-for="(item,index) in listData" :key="index">
+      <div class="list" v-for="(item,index) in SpecialArea" :key="index">
         <div class="listItem">
           <div class="listPic">
-            <img v-lazy="item.picUrl" alt>
+            <img v-lazy="item.picurl" alt>
           </div>
-          <div class="listTitle">￥{{item.price}}</div>
+          <div class="listTitle">￥{{item.goods_price}}</div>
         </div>
       </div>
     </div>
@@ -22,16 +22,9 @@
 <script>
 export default {
   name: "Girl",
+  props: ["SpecialArea", "titles"],
   data() {
-    return {
-      listData: [
-        { picUrl: "../../static/img/girl/girl_1.jpg", price: "109.00" },
-        { picUrl: "../../static/img/girl/girl_2.jpg", price: "119.00" },
-        { picUrl: "../../static/img/girl/girl_3.jpg", price: "169.00" },
-        { picUrl: "../../static/img/girl/girl_4.jpg", price: "108.00" },
-        { picUrl: "../../static/img/girl/girl_5.jpg", price: "209.00" }
-      ]
-    };
+    return {};
   }
 };
 </script>

@@ -1,21 +1,16 @@
 <template>
   <div class="footer">
-    <div class="listItem" v-for="(item,i) in listData" :key="i">
-      <img v-lazy="item.picUrl" alt>
+    <div class="listItem" v-for="(item,i) in footer" :key="i">
+      <img v-lazy="item.picurl" alt>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "Footer",
+  props: ["footer"],
   data() {
-    return {
-      listData: [
-        { picUrl: "../../static/img/footer/footer_1.jpg" },
-        { picUrl: "../../static/img/footer/footer_2.jpg" },
-        { picUrl: "../../static/img/footer/footer_3.jpg" }
-      ]
-    };
+    return {};
   }
 };
 </script>

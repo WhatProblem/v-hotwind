@@ -1,32 +1,17 @@
 <template>
   <div class="discountInfo">
-    <div class="disList" v-for="(item,index) in discountList" :key="index">
-      <img v-lazy="item.picUrl" alt>
+    <div class="disList" v-for="(item,index) in discount" :key="index">
+      <img v-lazy="item.picurl" alt>
     </div>
-    <!-- <div class="disList">
-      <img v-lazy="'../../static/img/region/region_2.jpg'" alt>
-    </div>
-    <div class="disList">
-      <img v-lazy="'../../static/img/region/region_3.jpg'" alt>
-    </div>-->
   </div>
 </template>
 <script>
 export default {
   name: "DiscountInfo",
+  props: ["discount"],
   data() {
     return {
-      discountList: [
-        {
-          picUrl: "../../static/img/region/region_1.jpg"
-        },
-        {
-          picUrl: "../../static/img/region/region_2.jpg"
-        },
-        {
-          picUrl: "../../static/img/region/region_3.jpg"
-        }
-      ]
+      
     };
   }
 };

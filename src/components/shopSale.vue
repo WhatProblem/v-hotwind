@@ -1,19 +1,19 @@
 <template>
   <div class="shopSale">
     <div class="saleTitle ignore">
-      店铺促销
+      {{shopSale[0]['sale_name']}}
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="saleDetail">
-      <div class="leftPic">
-        <img class="leftImg" v-lazy="saleData[0]['picUrl']" alt>
+      <div class="leftPic" v-for="(item,i) in shopSale" :key="i" v-if="item.sale_type_order=='0'">
+        <img class="leftImg" v-lazy="item.picurl" alt>
       </div>
       <div class="rightPic">
-        <div class="topPic">
-          <img class="topImg" v-lazy="saleData[1]['picUrl']" alt>
+        <div class="topPic" v-for="(item,i) in shopSale" :key="i" v-if="item.sale_type_order=='1'">
+          <img class="topImg" v-lazy="item.picurl" alt>
         </div>
-        <div class="botPic">
-          <img class="botImg" v-lazy="saleData[2]['picUrl']" alt>
+        <div class="botPic" v-for="(item,i) in shopSale" :key="i" v-if="item.sale_type_order=='2'">
+          <img class="botImg" v-lazy="item.picurl" alt>
         </div>
       </div>
     </div>
@@ -22,14 +22,9 @@
 <script>
 export default {
   name: "ShopSale",
+  props: ["shopSale"],
   data() {
-    return {
-      saleData: [
-        { picUrl: "../../static/img/shopSale/left.jpg" },
-        { picUrl: "../../static/img/shopSale/r_top.jpg" },
-        { picUrl: "../../static/img/shopSale/r_bot.jpg" }
-      ]
-    };
+    return {};
   }
 };
 </script>

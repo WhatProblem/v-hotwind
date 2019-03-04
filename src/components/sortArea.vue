@@ -1,14 +1,14 @@
 <template>
   <div class="sortArea">
     <div class="sortTitile ignore">
-      {{propData.title}}
+      {{sorts[0]['sort_title']}}
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="sortList">
-      <div class="sortItem" v-for="(item,index) in propData.sortList" :key="index">
+      <div class="sortItem" v-for="(item,index) in sorts" :key="index">
         <div class="sortImg">
-          <img class="poster" :src="item.picUrl" alt>
-          <div class="itemTitle">{{item.sortName}}</div>
+          <img class="poster" v-lazy="item.picurl" alt>
+          <div class="itemTitle">{{item.sort_name}}</div>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
 <script>
 export default {
   name: "SortArea",
-  props: ["propData"],
+  props: ["sorts"],
   data() {
     return {};
   }

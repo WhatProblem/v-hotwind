@@ -2,24 +2,9 @@
   <div class="banner">
     <!-- swiper -->
     <swiper :options="swiperOption">
-      <swiper-slide class="slideItem">
+      <swiper-slide class="slideItem" v-for="(item,i) in bannerData" :key="i">
         <div class="posterImg">
-          <img src="../assets/img/banner/banner_1.jpg" alt>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="slideItem">
-        <div class="posterImg">
-          <img src="../assets/img/banner/banner_2.jpg" alt>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="slideItem">
-        <div class="posterImg">
-          <img src="../assets/img/banner/banner_3.jpg" alt>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="slideItem">
-        <div class="posterImg">
-          <img src="../assets/img/banner/banner_4.jpg" alt>
+          <img :src="item.picurl" alt>
         </div>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -29,8 +14,10 @@
 
 <script>
 export default {
+  props: ["bannerData"],
   data() {
     return {
+      datas: null,
       swiperOption: {
         pagination: {
           el: ".swiper-pagination",
@@ -43,14 +30,16 @@ export default {
         loop: true,
         on: {
           click: function(e) {
-            console.log(this.activeIndex)
+            console.log(this.activeIndex);
           }
         }
       }
     };
   },
   created() {},
-  mounted() {},
+  mounted() {
+    // console.log(this.bannerData);
+  },
   methods: {
     testClick() {
       console.log(234423424);

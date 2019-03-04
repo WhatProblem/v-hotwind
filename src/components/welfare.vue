@@ -5,17 +5,16 @@
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="introImg">
-      <img class="showImg" v-lazy="picUrl" alt>
+      <img class="showImg" v-lazy="welfare[0]['picurl']" alt>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "Welfare",
+  props: ["welfare"],
   data() {
-    return {
-      picUrl: "../../static/img/welfare/welfare.jpg"
-    };
+    return {};
   }
 };
 </script>

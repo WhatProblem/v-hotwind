@@ -5,11 +5,11 @@
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="hotDetail">
-      <div class="hotList" v-for="(item,index) in dataList" :key="index">
+      <div class="hotList" v-for="(item,index) in hotSale" :key="index">
         <div class="showImg">
-          <img class="hotImg" v-lazy="item.picUrl" alt>
+          <img class="hotImg" v-lazy="item.picurl" alt>
         </div>
-        <div class="showPrice">￥{{item.price}}</div>
+        <div class="showPrice">￥{{item.goods_price}}</div>
       </div>
     </div>
   </div>
@@ -17,20 +17,9 @@
 <script>
 export default {
   name: "HotSale",
+  props: ["hotSale"],
   data() {
-    return {
-      dataList: [
-        { picUrl: "../../static/img/hotSale/hotSale_1.jpg", price: "109.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_2.jpg", price: "119.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_3.jpg", price: "129.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_4.jpg", price: "119.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_5.jpg", price: "169.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_6.jpg", price: "199.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_7.jpg", price: "209.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_8.jpg", price: "409.00" },
-        { picUrl: "../../static/img/hotSale/hotSale_9.jpg", price: "109.00" }
-      ]
-    };
+    return {};
   }
 };
 </script>

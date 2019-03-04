@@ -1,24 +1,19 @@
 <template>
   <div class="theme">
-    <div class="thtitle ignore">
-      <img src="../assets/img/theme/theme_1.png" alt>
-    </div>
-    <div class="thtitle ignore">
-      <img src="../assets/img/theme/theme_2.png" alt>
-    </div>
-    <div class="thtitle ignore">
-      <img src="../assets/img/theme/theme_3.png" alt>
-    </div>
-    <div class="thtitle ignore">
-      <img src="../assets/img/theme/theme_4.png" alt>
+    <div class="thtitle ignore" v-for="(item,i) in themeData" :key="i">
+      <img v-lazy="item.picurl" alt>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "Theme",
+  props: ['themeData'],
   data() {
     return {};
+  },
+  mounted () {
+    // console.log(this.themeData)
   }
 };
 </script>

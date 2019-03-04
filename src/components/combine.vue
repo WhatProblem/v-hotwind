@@ -1,11 +1,11 @@
 <template>
   <div class="combine">
     <div class="content">
-      <div class="l_content">
-          <img v-lazy="'../../static/img/combine/combine_1.jpg'" alt="">
+      <div class="l_content" v-for="(item,i) in combine" :key="i" v-if="item.pic_position=='left'">
+        <img v-lazy="item.picurl" alt>
       </div>
-      <div class="r_content">
-          <img v-lazy="'../../static/img/combine/combine_2.jpg'" alt="">
+      <div class="r_content" v-for="(item,i) in combine" :key="i" v-if="item.pic_position=='right'">
+        <img v-lazy="item.picurl" alt>
       </div>
     </div>
   </div>
@@ -13,6 +13,7 @@
 <script>
 export default {
   name: "Combine",
+  props: ["combine"],
   data() {
     return {};
   }

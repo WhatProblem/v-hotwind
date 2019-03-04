@@ -6,19 +6,19 @@
     </div>
     <div class="popDetail">
       <div class="topLeft">
-        <div class="l_topImg">
-          <img class="lt_img" v-lazy="dataList[0]['picUrl']" alt>
+        <div class="l_topImg" v-for="(item,i) in fashion" :key="i" v-if="item.pic_position=='left_top'">
+          <img class="lt_img" v-lazy="item['picurl']" alt>
         </div>
-        <div class="l_botImg">
-          <img class="lb_img" v-lazy="dataList[1]['picUrl']" alt>
+        <div class="l_botImg" v-for="(item,i) in fashion" :key="i" v-if="item.pic_position=='left_bottom'">
+          <img class="lb_img" v-lazy="item['picurl']" alt>
         </div>
       </div>
       <div class="topRight">
-        <div class="r_topImg">
-          <img class="rt_img" v-lazy="dataList[2]['picUrl']" alt>
+        <div class="r_topImg" v-for="(item,i) in fashion" :key="i" v-if="item.pic_position=='right_top'">
+          <img class="rt_img" v-lazy="item['picurl']" alt>
         </div>
-        <div class="r_botImg">
-          <img class="rb_img" v-lazy="dataList[3]['picUrl']" alt>
+        <div class="r_botImg" v-for="(item,i) in fashion" :key="i" v-if="item.pic_position=='right_bottom'">
+          <img class="rb_img" v-lazy="item['picurl']" alt>
         </div>
       </div>
     </div>
@@ -27,15 +27,9 @@
 <script>
 export default {
   name: "Fashion",
+  props: ['fashion'],
   data() {
-    return {
-      dataList: [
-        { picUrl: "../../static/img/fashion/fashion_1.jpg" },
-        { picUrl: "../../static/img/fashion/fashion_2.jpg" },
-        { picUrl: "../../static/img/fashion/fashion_3.jpg" },
-        { picUrl: "../../static/img/fashion/fashion_4.jpg" }
-      ]
-    };
+    return {};
   }
 };
 </script>
