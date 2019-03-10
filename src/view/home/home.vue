@@ -1,19 +1,21 @@
 <template>
-  <div class="home" v-if="homeData">
-    <Banner :bannerData="homeData.banner"></Banner>
-    <Theme :themeData="homeData.theme"></Theme>
-    <SortArea :sorts="homeData.girlSort"></SortArea>
-    <SortArea :sorts="homeData.boySort"></SortArea>
-    <DiscountInfo :discount="homeData.discount"></DiscountInfo>
-    <ShopSale :shopSale="homeData.shopSale"></ShopSale>
-    <HotSale :hotSale="homeData.hotSale"></HotSale>
-    <Welfare :welfare="homeData.welfare"></Welfare>
-    <Fashion :fashion="homeData.fashion"></Fashion>
-    <Combine :combine="homeData.fashionSeason"></Combine>
-    <SpecialArea :SpecialArea="homeData.girls" :titles="'女装专区'"></SpecialArea>
-    <SpecialArea :SpecialArea="homeData.boys" :titles="'男装专区'"></SpecialArea>
-    <SpecialArea :SpecialArea="homeData.shoesBag" :titles="'鞋包专区'"></SpecialArea>
-    <Footer :footer="homeData.footer"></Footer>
+  <div class="home">
+    <div class="homeSec" v-if="homeData">
+      <Banner :bannerData="homeData.banner"></Banner>
+      <Theme :themeData="homeData.theme"></Theme>
+      <SortArea :sorts="homeData.girlSort"></SortArea>
+      <SortArea :sorts="homeData.boySort"></SortArea>
+      <DiscountInfo :discount="homeData.discount"></DiscountInfo>
+      <ShopSale :shopSale="homeData.shopSale"></ShopSale>
+      <HotSale :hotSale="homeData.hotSale"></HotSale>
+      <Welfare :welfare="homeData.welfare"></Welfare>
+      <Fashion :fashion="homeData.fashion"></Fashion>
+      <Combine :combine="homeData.fashionSeason"></Combine>
+      <SpecialArea :SpecialArea="homeData.girls" :titles="'女装专区'"></SpecialArea>
+      <SpecialArea :SpecialArea="homeData.boys" :titles="'男装专区'"></SpecialArea>
+      <SpecialArea :SpecialArea="homeData.shoesBag" :titles="'鞋包专区'"></SpecialArea>
+      <Footer :footer="homeData.footer"></Footer>
+    </div>
   </div>
 </template>
 <script>
@@ -63,7 +65,7 @@ export default {
   },
   data() {
     return {
-      homeData: null,
+      homeData: null
     };
   },
   created() {
@@ -88,5 +90,8 @@ export default {
   font-size: 32px;
   line-height: 50px;
   color: #666;
+}
+.loading {
+
 }
 </style>

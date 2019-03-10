@@ -5,7 +5,7 @@
       <i class="v-hot icon-arrow_r"></i>
     </div>
     <div class="sortList">
-      <div class="sortItem" v-for="(item,index) in sorts" :key="index">
+      <div class="sortItem" v-for="(item,index) in sorts" :key="index" @click="navGoodList(item)">
         <div class="sortImg">
           <img class="poster" v-lazy="item.picurl" alt>
           <div class="itemTitle">{{item.sort_name}}</div>
@@ -20,6 +20,12 @@ export default {
   props: ["sorts"],
   data() {
     return {};
+  },
+  methods: {
+    navGoodList(item) {
+      console.log(item);
+      this.$router.push({ path: "goodList", query: { sort_navid: item.sort_navid } });
+    }
   }
 };
 </script>
@@ -72,7 +78,6 @@ export default {
         width: 100%;
         height: 100%;
         img {
-          width: 100px;
           height: 100px;
           margin: auto;
         }

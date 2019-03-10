@@ -7,6 +7,7 @@ import qs from 'qs'
 // 添加请求拦截器
 const devUrl = 'http://127.0.0.1:80'
 const proUrl = 'http://www.wslifestyle.com'
+const onLineUrl = 'http://	whatproblem.xg1haodfed.zhihuanche.cn'
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么

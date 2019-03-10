@@ -15,7 +15,7 @@ import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: '../static/img/err.gif',
-  loading: '../static/img/loading.gif',
+  // loading: '../static/img/loading.gif',
   attempt: 1
 })
 
