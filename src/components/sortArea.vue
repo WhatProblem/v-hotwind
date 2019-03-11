@@ -24,7 +24,10 @@ export default {
   methods: {
     navGoodList(item) {
       console.log(item);
-      this.$router.push({ path: "goodList", query: { sort_navid: item.sort_navid } });
+      this.$router.push({
+        path: "goodList",
+        query: { sort_navid: item.sort_navid, sort_type: item.sort_type }
+      });
     }
   }
 };

@@ -1,18 +1,28 @@
 <template>
   <div class="goodList">
-    <div class="filterArea ignore">
-      <div class="filterTitle orders">
-        默认排序
-        <i class="v-hot icon-arrow_down"></i>
+    <div class="filter">
+      <div class="filterArea ignore">
+        <div class="filterTitle orders" @click="changeOrder">
+          默认排序
+          <i :class="['v-hot',defaultOrder ? 'icon-arrow_up' : 'icon-arrow_down']"></i>
+        </div>
+        <div class="filterTitle sales">销量</div>
+        <div class="filterTitle price" @click="changePrice">
+          价格
+          <i :class="['v-hot',defaultPrice ? 'icon-arrow_up' : 'icon-arrow_down']"></i>
+        </div>
+        <div class="filterTitle sorts" @click="changeSort">
+          分类
+          <i :class="['v-hot',defaultSort ? 'icon-arrow_up' : 'icon-arrow_down']"></i>
+        </div>
       </div>
-      <div class="filterTitle sales">销量</div>
-      <div class="filterTitle price">
-        价格
-        <i class="v-hot icon-arrow_down"></i>
+      <div class="filterType" v-if="defaultOrder">
+        <div class="filterList ignore">综合排序</div>
+        <div class="filterList ignore">新品排序</div>
       </div>
-      <div class="filterTitle sorts">
-        分类
-        <i class="v-hot icon-arrow_down"></i>
+      <div class="filterSort ignore" v-if="defaultSort">
+        <div class="sortList">开衫卫衣</div>
+        <div class="sortList">套头卫衣</div>
       </div>
     </div>
     <div class="listArea">
@@ -36,7 +46,28 @@ export default {
   name: "GoodList",
   data() {
     return {
+      defaultOrder: false,
+      defaultSort: false,
+      defaultPrice: false,
       arr: [
+        {
+          picurl: "../../../static/goodList/0_001.jpg",
+          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
+          price: "￥139.00",
+          cut_now: 1
+        },
+        {
+          picurl: "../../../static/goodList/0_002.jpg",
+          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
+          price: "￥139.00",
+          cut_now: 1
+        },
+        {
+          picurl: "../../../static/goodList/0_003.jpg",
+          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
+          price: "￥139.00",
+          cut_now: 1
+        },
         {
           picurl: "../../../static/goodList/0_001.jpg",
           title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
@@ -57,6 +88,27 @@ export default {
         }
       ]
     };
+  },
+  created () {
+    this.init();
+  },
+  mounted () {
+    
+  },
+  methods: {
+    init() {
+      let querys = this.$route.query;
+      console.log(querys)
+    },
+    changeOrder() {
+      this.defaultOrder = !this.defaultOrder;
+    },
+    changeSort() {
+      this.defaultSort = !this.defaultSort;
+    },
+    changePrice() {
+      this.defaultPrice = !this.defaultPrice;
+    }
   }
 };
 </script>
@@ -64,23 +116,73 @@ export default {
 .goodList {
   width: 100%;
   background: #ffffff;
-  .filterArea {
+  .filter {
     width: 100%;
-    height: 84px;
-    display: flex;
-    .filterTitle {
-      width: 25%;
+    position: relative;
+    .filterArea {
+      width: 100%;
       height: 84px;
-      line-height: 84px;
-      text-align: center;
-      font-size: 30px;
-      i {
-        font-size: 28px;
+      display: flex;
+      .filterTitle {
+        width: 25%;
+        height: 84px;
+        line-height: 84px;
+        text-align: center;
+        font-size: 30px;
+        i {
+          font-size: 28px;
+        }
       }
     }
-  }
-  .ignore {
-    border-bottom: 1px solid #f1f1f1;
+    .ignore {
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .filterType {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 84px;
+      background: #fff;
+      .filterList {
+        width: 100%;
+        height: 88px;
+        padding: 24px 34px;
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 40px;
+        color: #474747;
+      }
+      .ignore {
+        border-top: 1px solid #f1f1f1;
+      }
+    }
+    .filterSort {
+      width: 100%;
+      min-height: 134px;
+      position: absolute;
+      left: 0;
+      top: 84px;
+      background: #fff;
+      padding: 24px;
+      box-sizing: border-box;
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .sortList {
+        height: 84px;
+        line-height: 84px;
+        vertical-align: middle;
+        font-size: 30px;
+        color: #474747;
+        float: left;
+        margin-right: 50px;
+      }
+    }
+    .ignore {
+      border-top: 1px solid #f1f1f1;
+    }
   }
   .listArea {
     width: 100%;
