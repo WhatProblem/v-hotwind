@@ -6,5 +6,10 @@
         "wsUrl": "/initHome",
         "param": "无",
         "content": "初始化主页数据"
+    },
+    "goodList": {
+        "wsUrl": "/goodList",
+        "param": "sort_navid,sort_type",
+        "content": "获取商品页面数据"
     }
 }

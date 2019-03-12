@@ -26,15 +26,16 @@
       </div>
     </div>
     <div class="listArea">
-      <div class="list" v-for="(item,i) in arr" :key="i">
+      <div class="list" v-for="(item,i) in goodList" :key="i">
         <div class="img">
           <img v-lazy="item.picurl" alt>
         </div>
         <div class="listTitle">
-          <div class="topTitle">{{item.title}}</div>
+          <div class="topTitle">{{item.goods_name}}</div>
           <div class="botPrice">
-            <div class="leftPrice">{{item.price}}</div>
-            <div class="cutIcon">立减</div>
+            <div class="leftPrice">{{item.goods_price}}</div>
+            <div class="cutIcon" v-if="item.onsale_info==='1'||item.onsale_info==='3'">立减</div>
+            <div class="cutIcon" v-if="item.onsale_info==='2'">包邮</div>
           </div>
         </div>
       </div>
@@ -49,56 +50,19 @@ export default {
       defaultOrder: false,
       defaultSort: false,
       defaultPrice: false,
-      arr: [
-        {
-          picurl: "../../../static/goodList/0_001.jpg",
-          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
-          price: "￥139.00",
-          cut_now: 1
-        },
-        {
-          picurl: "../../../static/goodList/0_002.jpg",
-          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
-          price: "￥139.00",
-          cut_now: 1
-        },
-        {
-          picurl: "../../../static/goodList/0_003.jpg",
-          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
-          price: "￥139.00",
-          cut_now: 1
-        },
-        {
-          picurl: "../../../static/goodList/0_001.jpg",
-          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
-          price: "￥139.00",
-          cut_now: 1
-        },
-        {
-          picurl: "../../../static/goodList/0_002.jpg",
-          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
-          price: "￥139.00",
-          cut_now: 1
-        },
-        {
-          picurl: "../../../static/goodList/0_003.jpg",
-          title: "三福2019夏装新品女印花卫衣 韩版休闲宽松长袖上衣女",
-          price: "￥139.00",
-          cut_now: 1
-        }
-      ]
+      goodList: [], // 商品列表
     };
   },
-  created () {
+  created() {
     this.init();
   },
-  mounted () {
-    
-  },
+  mounted() {},
   methods: {
     init() {
-      let querys = this.$route.query;
-      console.log(querys)
+      let querys = JSON.parse(decodeURIComponent(this.$route.query.querys));
+      querys.pages = 0;
+      querys.offsets = 6;
+      this.getGoodList(querys);
     },
     changeOrder() {
       this.defaultOrder = !this.defaultOrder;
@@ -108,6 +72,13 @@ export default {
     },
     changePrice() {
       this.defaultPrice = !this.defaultPrice;
+    },
+    getGoodList(param) {
+      this.$http.get("goodList", param).then(res => {
+        if (res.data.code === 200) {
+          this.goodList = res.data.data;
+        }
+      });
     }
   }
 };
