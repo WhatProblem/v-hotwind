@@ -2,9 +2,18 @@
 
 > vue for line shop
 
-## Build Setup
-
+项目在线地址：使用手机扫码在线查看
 ![image](https://github.com/WhatProblem/v-hotwind/blob/master/src/assets/whatproblem.xyz.jpg)
+
+采用vw方案布局，配合以下插件可以在设计稿尺寸基础上直接标注，无需手动计算
+cssnano,
+postcss-aspect-ratio-mini，
+postcss-cssnext，
+postcss-px-to-viewport，
+postcss-viewport-units，
+postcss-write-svg
+
+## Build Setup
 
 ``` bash
 # install dependencies
