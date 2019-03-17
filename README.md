@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+![image](https://github.com/WhatProblem/v-hotwind/blob/master/src/assets/whatproblem.xyz.jpg)
+
 ``` bash
 # install dependencies
 npm install
