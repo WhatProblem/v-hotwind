@@ -209,7 +209,7 @@ export default {
   }
   .listArea {
     width: 100%;
-    height: 1200px;
+    height: 1100px;
     overflow: hidden;
     padding: 0 10px;
     background: rgb(245, 245, 245);
