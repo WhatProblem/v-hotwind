@@ -1,6 +1,8 @@
 <template>
   <div id="app" :class="{showtab: tabHide}">
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
     <Tabbar class="tabbar" v-if="tabHide"></Tabbar>
   </div>
 </template>
